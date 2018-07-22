@@ -1,26 +1,8 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "0.6.0",
+        "version": "0.0.1",
         "news": {
-            "0.6.0": {
-                "en": "Support of admin3",
-                "de": "Unterstützung von admin3",
-                "ru": "Поддержка admin3",
-                "pt": "Suporte de admin3",
-                "nl": "Ondersteuning van admin3",
-                "fr": "Support de admin3",
-                "it": "Supporto di admin3",
-                "es": "Soporte de admin3"
-            },
-            "0.5.0": {
-                "en": "beta version",
-                "de": "Betaversion",
-                "ru": "Бета версия",
-                "pt": "Versão beta",
-                "fr": "Version bêta",
-                "nl": "Beta versie"
-            },
             "0.0.1": {
                 "en": "initial adapter",
                 "de": "Initiale Version",
@@ -30,48 +12,30 @@
                 "nl": "Eerste release"
             }
         },
-		"title": "Javascript/Node.js based energymanager",
+		"title": "energymanager",
         "titleLang": {
-            "en": "Javascript/Node.js based energymanager",
-            "de": "Javascript / Node.js basierte Vorlagenadapter",
-            "ru": "Адаптер шаблонов на основе Javascript / Node.js",
-            "pt": "Adaptador de modelo baseado em Javascript / Node.js",
-            "nl": "Javascript / Node.js gebaseerde sjabloonadapter",
-            "fr": "Javascript / Node.js basé adaptateur de modèle",
-            "it": "Adattatore modello basato su Javascript / Node.js",
-            "es": "Adaptador de plantilla basado en JavaScript / Node.js"
+            "en": "energymanager",
+            "de": "energymanager"
         },
         "desc": {
-            "en": "ioBroker energymanager",
-            "de": "ioBroker Energymanager",
-            "ru": "ioBroker Energymanager как образец",
-            "pt": "Modelo de adaptador para o ioBroker",
-            "fr": "ioBroker adaptateur modèle",
-            "nl": "ioBroker Energymanager",
-            "it": "Adattatore modello ioBroker",
-            "es": "Adaptador de plantilla ioBroker"
+            "en": "energymanager for E.ON Aura and maybe Solarwatt MyReserve",
+            "de": "Energymanager für E.ON Aura Stromspeicher und evtl. Solarwatt MyReserve"
         },
         "authors": [
             "Michael Schuster <development@unltd-networx.de>"
         ],
         "docs": {
             "en": "docs/en/admin.md",
-            "ru": "docs/ru/admin.md",
-            "de": "docs/de/admin.md",
-            "es": "docs/es/admin.md",
-            "it": "docs/it/admin.md",
-            "fr": "docs/fr/admin.md",
-            "nl": "docs/nl/admin.md",
-            "pt": "docs/pt/admin.md"
+            "de": "docs/de/admin.md"
         },
         "platform": "Javascript/Node.js",
         "mode": "daemon",
         "icon": "energymanager.png",
         "materialize": true,
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.energymanager/master/admin/energymanager.png",
+        "extIcon": "https://raw.githubusercontent.com/unltdnetworx/ioBroker.energymanager/master/admin/energymanager.png",
         "keywords": ["energymanager", "vis", "GUI", "graphical", "scada"],
-        "readme": "https://github.com/ioBroker/ioBroker.energymanager/blob/master/README.md",
+        "readme": "https://github.com/unltdnetworx/ioBroker.energymanager/blob/master/README.md",
         "loglevel": "info",
         "type": "general",
         "license": "MIT",
