@@ -1,9 +1,8 @@
 {
-  "Auto": "Auto",
-  "Manual": "Manual",
-  "My select": "Mein Auswahl",
-  "on save adapter restarts with new config immediately": "Beim Speichern von Einstellungen der Adapter wird sofort neu gestartet.",
-  "template adapter settings": "Beispiel",
-  "test1": "Test 1",
-  "test2": "Test 2"
+  "E.ON Aura energymanager": "E.ON Aura Energymanager",
+  "Solarwatt MyReserve": "Solarwatt MyReserve",
+  "type": "Manager Typ",
+  "IP address": "IP Adresse",
+  "IP address of the energymanager": "IP Adresse des Energymanagers",
+  "Solarwatt is actualy not working because the url is not confirmed.": "Solarwatt ist momentan noch ohne Funktion, da keine IP Adresse bekannt ist.."
 }

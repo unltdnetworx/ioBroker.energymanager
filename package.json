@@ -1,6 +1,6 @@
 {
   "name": "iobroker.energymanager",
-  "version": "0.6.0",
+  "version": "0.0.1",
   "description": "energymanager",
   "author": {
     "name": "Michael Schuster",
@@ -12,7 +12,7 @@
       "email": "development@unltd-networx.de"
     }
   ],
-  "homepage": "https://github.com/ioBroker/ioBroker.energymanager",
+  "homepage": "https://github.com/unltdnetworx/ioBroker.energymanager",
   "license": "MIT",
   "keywords": [
     "ioBroker",
@@ -22,7 +22,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ioBroker/ioBroker.energymanager"
+    "url": "https://github.com/unltdnetworx/ioBroker.energymanager"
   },
   "dependencies": {},
   "devDependencies": {
@@ -35,7 +35,7 @@
     "test": "node node_modules/mocha/bin/mocha --exit"
   },
   "bugs": {
-    "url": "https://github.com/ioBroker/ioBroker.energymanager/issues"
+    "url": "https://github.com/unltdnetworx/ioBroker.energymanager/issues"
   },
   "readmeFilename": "README.md"
 }
