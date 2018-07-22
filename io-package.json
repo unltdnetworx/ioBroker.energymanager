@@ -30,7 +30,7 @@
         },
         "platform": "Javascript/Node.js",
         "mode": "schedule",
-        "schedule": "*/1 * * * *",
+        "schedule": "*/15 * * * * *",
         "icon": "energymanager.png",
         "materialize": true,
         "enabled": true,
