@@ -18,13 +18,17 @@
     "ioBroker",
     "energymanager",
     "Smart Home",
-    "home automation"
+    "home automation",
+    "EON Aura",
+    "Solarwatt MyReserve"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/unltdnetworx/ioBroker.energymanager"
   },
-  "dependencies": {},
+  "dependencies": {
+    "request": "^2.72.0"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "mocha": "^4.1.0",
