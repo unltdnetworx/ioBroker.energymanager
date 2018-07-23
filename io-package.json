@@ -38,17 +38,9 @@
         "keywords": ["energymanager", "GUI", "EON Aura", "Solarwatt MyReserver"],
         "readme": "https://github.com/unltdnetworx/ioBroker.energymanager/blob/master/README.md",
         "loglevel": "info",
-        "type": "general",
+        "type": "energy",
         "license": "MIT",
         "messagebox": false,
         "restartAdapters": ["vis"]
-    },
-    "native": {
-        "test1": true,
-        "test2": 42,
-        "mySelect": "auto"
-    },
-    "objects": [
-
-    ]
+    }
 }
