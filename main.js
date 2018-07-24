@@ -36,37 +36,38 @@ function main() {
                             
                             if (content.result.items[i].tagValues[j].value != null && content.result.items[i].tagValues[j].value != "[object Object]") {
 
-                                adapter.setObjectNotExists(content.result.items[i].guid + "." + content.result.items[i].tagValues[j].tagName, {
-                                    type: 'state',
-                                    common: {
-                                        name: content.result.items[i].tagValues[j].tagName,
-                                        type: typeof content.result.items[i].tagValues[j].value,
-                                        role: 'value'
+                                adapter.setObjectNotExists(
+                                    content.result.items[i].guid + "." + content.result.items[i].tagValues[j].tagName, {
+                                        type: 'state',
+                                        common: {
+                                            name: content.result.items[i].tagValues[j].tagName,
+                                            type: typeof content.result.items[i].tagValues[j].value,
+                                            role: 'value'
+                                        },
+                                        native: {}
                                     },
-                                    native: {}
-                                });
-                            
-                                adapter.setState(content.result.items[i].guid + "." + content.result.items[i].tagValues[j].tagName, {val: content.result.items[i].tagValues[j].value, ack: true});
+                                    adapter.setState(
+                                        content.result.items[i].guid + "." + content.result.items[i].tagValues[j].tagName,
+                                        {val: content.result.items[i].tagValues[j].value, ack: true}
+                                    )
+                                );
 
                             }
                             
                         }
                     }
-                    
-                    
+                    adapter.stop();
 
                 } else {
                     adapter.log.error(error);
+                    adapter.stop();
                 }
             }
 
         )
     } else if (managerType == "solarwatt") {
         adapter.log.info("Solarwatt doesn't work at the moment.");
-    }
-
-    setTimeout(function() {
         adapter.stop();
-    }, 10000);
+    }
 
 }
