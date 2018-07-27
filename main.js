@@ -34,21 +34,67 @@ function main() {
 
                         for (var j in content.result.items[i].tagValues) {
                             
-                            if (content.result.items[i].tagValues[j].value != null && content.result.items[i].tagValues[j].value != "[object Object]") {
+                            var valValue = content.result.items[i].tagValues[j].value;
+                            var valTag = content.result.items[i].tagValues[j].tagName;
+                            var valType = typeof valValue;
+                            
+                            switch (valType) {
+                                case "boolean":
+                                    var valRole = 'indicator.working';
+                                    break;
+                                
+                                case "number":
+                                    if (valTag.search('Date') > -1){
+                                        var valRole = 'value.datetime';
+                                        break;
+                                    }
+                                    if (valTag.search('StateOfCharge') == 0){
+                                        var valRole = 'value.battery';
+                                        break;
+                                    }
+                                    if (valTag.search('PowerConsum') == 0 || valTag.search('Work') == 0){
+                                        var valRole = 'value.power.consumption';
+                                        break;
+                                    }
+                                    if (valTag.search('Temperature') == 0){
+                                        var valRole = 'value.temperature';
+                                        break;
+                                    }
+                                    if (valTag.search('Min') > -1 && valTag.search('Minute') == -1){
+                                        var valRole = 'value.min';
+                                        break;
+                                    }
+                                    if (valTag.search('Max') > -1){
+                                        var valRole = 'value.max';
+                                        break;
+                                    }
+                                    var valRole = 'value';
+                                    break;
+                                
+                                case "string":
+                                    var valRole = 'text';
+                                    break;
+
+                                default:
+                                    var valRole = 'state';
+                                    break;
+                            }
+
+                            if (valValue != null && valType != 'object') {
 
                                 adapter.setObjectNotExists(
-                                    content.result.items[i].guid + "." + content.result.items[i].tagValues[j].tagName, {
+                                    content.result.items[i].guid + "." + valTag, {
                                         type: 'state',
                                         common: {
-                                            name: content.result.items[i].tagValues[j].tagName,
-                                            type: typeof content.result.items[i].tagValues[j].value,
-                                            role: 'value'
+                                            name: valTag,
+                                            type: valType,
+                                            role: valRole
                                         },
                                         native: {}
                                     },
                                     adapter.setState(
-                                        content.result.items[i].guid + "." + content.result.items[i].tagValues[j].tagName,
-                                        {val: content.result.items[i].tagValues[j].value, ack: true}
+                                        content.result.items[i].guid + "." + valTag,
+                                        {val: valValue, ack: true}
                                     )
                                 );
 
