@@ -12,9 +12,15 @@ If the Solarwatt manager uses other urls than the E.ON one, it should be easy to
 2. Grab the values out of the your energymanger.[x]-object.
 
 ## Requirements
-* non   
+* E.ON Aura energymanger or Solarwatt MyReserve energymanger   
 
 ## Changelog
+
+### 0.0.3
+* roles of objects are now more detailed
+
+### 0.0.2
+* code validation for ioBroker project
 
 ### 0.0.1
 * initial release
