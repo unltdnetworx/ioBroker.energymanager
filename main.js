@@ -6,19 +6,37 @@
 
 'use strict';
 
-const utils =    require(__dirname + '/lib/utils');
+const utils = require(__dirname + '/lib/utils');
 var request = require('request');
+var systemLanguage;
+var nameTranslation;
 
 const adapter = new utils.Adapter('energymanager');
 
 adapter.on('ready', function () {
-    main();
+    adapter.getForeignObject('system.config', function (err, obj) {
+        if (err) {
+            adapter.log.error(err);
+            return;
+        } else if (obj) {
+            if (!obj.common.language) {
+                adapter.log.info("Language not set.");
+                main();
+            } else {
+                systemLanguage = obj.common.language;
+                nameTranslation = require(__dirname + '/admin/i18n/' + systemLanguage + '/translations.json')
+                main();
+            }
+        }
+    });
+    
 });
 
 function main() {
 
     var managerType = adapter.config.managerType
     var managerAddress = adapter.config.managerAddress
+    var valTagLang;
 
     if (managerType == "eon") {
         request(
@@ -35,8 +53,13 @@ function main() {
                         for (var j in content.result.items[i].tagValues) {
                             
                             var valValue = content.result.items[i].tagValues[j].value;
-                            var valTag = content.result.items[i].tagValues[j].tagName;
+                            if(nameTranslation[content.result.items[i].tagValues[j].tagName]) {
+                                valTagLang = nameTranslation[content.result.items[i].tagValues[j].tagName];
+                            } else {
+                                valTagLang = content.result.items[i].tagValues[j].tagName;
+                            }
                             var valType = typeof valValue;
+                            var valTag = content.result.items[i].tagValues[j].tagName;
                             
                             switch (valType) {
                                 case "boolean":
@@ -86,7 +109,7 @@ function main() {
                                     content.result.items[i].guid + "." + valTag, {
                                         type: 'state',
                                         common: {
-                                            name: valTag,
+                                            name: valTagLang,
                                             type: valType,
                                             role: valRole
                                         },

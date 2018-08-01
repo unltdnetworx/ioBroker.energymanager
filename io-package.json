@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "news": {
+            "0.0.4": {
+                "en": "translation for objectnames integrated, not all translations integrated yet, will be extended",
+                "de": "Objektnamen werden jetzt übersetzt, nicht alle Übersetzungen eingearbeitet, weitere folgen"
+            },
             "0.0.3": {
                 "en": "more detailed roles of objects",
                 "de": "Rollen der einzelnen Objekte werden genauer definiert"

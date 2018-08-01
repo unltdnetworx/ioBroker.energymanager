@@ -16,6 +16,9 @@ If the Solarwatt manager uses other urls than the E.ON one, it should be easy to
 
 ## Changelog
 
+### 0.0.4
+* translation for objectnames integrated, translations will be extended
+
 ### 0.0.3
 * roles of objects are now more detailed
 
