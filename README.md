@@ -16,6 +16,9 @@ If the Solarwatt manager uses other urls than the E.ON one, it should be easy to
 
 ## Changelog
 
+### 0.0.5
+* more translations added, to refresh states delete energymanager object with all values. will be created new.
+
 ### 0.0.4
 * translation for objectnames integrated, translations will be extended
 
