@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "0.0.5",
+        "version": "0.1.0",
         "news": {
+            "0.1.0": {
+                "en": "bugfix and more translations added",
+                "de": "Fehlerbehebung und weitere Übersetzungen hinzugefügt"
+            },
             "0.0.5": {
                 "en": "more translations added",
                 "de": "weitere Übersetzungen hinzugefügt"
