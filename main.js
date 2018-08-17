@@ -72,6 +72,7 @@ function main() {
                             case "number":
                                 if (valTag.search('Date') > -1){
                                     var valRole = 'value.datetime';
+                                    valValue = new Date(valValue);
                                     break;
                                 }
                                 if (valTag.search('StateOfCharge') == 0){
