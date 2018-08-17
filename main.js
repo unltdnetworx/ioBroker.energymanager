@@ -108,14 +108,18 @@ function main() {
 
                         if (valValue != null && valType != 'object') {
 
-                            if (content.result.items[i].guid.indexOf('ERC') == 0) {
-                                strGroup = translateName("basics");
-                            } else if (content.result.items[i].guid.indexOf('location') > -1) {
-                                strGroup = translateName("location");
-                            } else if (content.result.items[i].guid.indexOf('pvplant') > -1) {
-                                strGroup = translateName("pv-plant");
-                            } else {
-                                strGroup = content.result.items[i].guid;
+                            switch(content.result.items[i].deviceModel[1].deviceClass) {
+                                case "com.kiwigrid.devices.inverter.Inverter":
+                                    strGroup=content.result.items[i].deviceModel[2].deviceClass.split(".").pop();
+                                break;
+                
+                                case "com.kiwigrid.devices.powermeter.PowerMeter":
+                                    strGroup=content.result.items[i].deviceModel[2].deviceClass.split(".").pop();
+                                break;
+                
+                                default:
+                                    strGroup=content.result.items[i].deviceModel[1].deviceClass.split(".").pop();
+                                break;
                             }
 
                             adapter.setObjectNotExists(
