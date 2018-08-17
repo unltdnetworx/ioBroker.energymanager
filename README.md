@@ -2,9 +2,9 @@
 # ioBroker.energymanager
 =================
 
-This adapter is a ment to read values from the E.ON Energymanager into ioBroker. Maybe it could work with the Solarwatt manager, because it should be the same thing with another name.
+This adapter is a ment to read values from devices powered by the kiwigrid network like the E.ON Energymanager into ioBroker. Also confirmed is the Solarwatt manager. It's possible that there are other devices working with this adapter, maybe innogy or enviam.
 
-If the Solarwatt manager uses other urls than the E.ON one, it should be easy to adapt. Help or hints are welcome.
+Help or hints are welcome.
 
 ## Steps 
 1. Install the adpater
@@ -12,9 +12,12 @@ If the Solarwatt manager uses other urls than the E.ON one, it should be easy to
 2. Grab the values out of the your energymanger.[x]-object.
 
 ## Requirements
-* E.ON Aura energymanger or Solarwatt MyReserve energymanger   
+* E.ON Aura energymanger, Solarwatt MyReserve energymanger or other kiwigrid-powered device   
 
 ## Changelog
+
+### 0.1.1
+* dropdown for the managertype was deleted, because it also works with solarwatt without special configuration.
 
 ### 0.1.0
 * bugfix in translationfiles, deleted from npmignore.

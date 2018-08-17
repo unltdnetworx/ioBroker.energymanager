@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "news": {
+            "0.1.1": {
+                "en": "dropdown for the managertype was deleted, icon changed",
+                "de": "Auswahl für verschiedene Managertypen enfernt, Logo geändert"
+            },
             "0.1.0": {
                 "en": "bugfix and more translations added",
                 "de": "Fehlerbehebung und weitere Übersetzungen hinzugefügt"
