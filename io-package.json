@@ -42,8 +42,8 @@
             "de": "energymanager"
         },
         "desc": {
-            "en": "energymanager for E.ON Aura and maybe Solarwatt MyReserve",
-            "de": "Energymanager für E.ON Aura Stromspeicher und evtl. Solarwatt MyReserve"
+            "en": "energymanager for kiwigrid-powered devices. confirmed for E.ON Aura and Solarwatt MyReserve",
+            "de": "Energymanager für Geräte die mit Kiwigrid Netzwerk laufen. Bestätogt für E.ON Aura Stromspeicher und Solarwatt MyReserve"
         },
         "authors": [
             "Michael Schuster <development@unltd-networx.de>"
