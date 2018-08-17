@@ -83,5 +83,8 @@
   "DirectionMetering": "current metering direction",
   "WorkIn": "work (Wh) in",
   "WorkOut": "work (Wh) out",
-  "PowerConsumedFromProducers": "direct consumed"
+  "PowerConsumedFromProducers": "direct consumed",
+  "location": "location",
+  "pv-plant": "pv-plant",
+  "basics": "basic-data"
 }

@@ -83,5 +83,8 @@
   "DirectionMetering": "Messrichtung aktuell",
   "WorkIn": "Arbeit (Wh) Bezug",
   "WorkOut": "Arbeit (Wh) Einspeisung",
-  "PowerConsumedFromProducers": "Direktverbrauch"
+  "PowerConsumedFromProducers": "Direktverbrauch",
+  "location": "Standort",
+  "pv-plant": "PV-Anlage",
+  "basics": "Anlagen-Grunddaten"
 }

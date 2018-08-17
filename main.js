@@ -32,6 +32,14 @@ adapter.on('ready', function () {
     
 });
 
+function translateName(strName) {
+    if(nameTranslation[strName]) {
+        return nameTranslation[strName];
+    } else {
+        return strName;
+    }
+}
+
 function main() {
 
     var managerAddress = adapter.config.managerAddress
@@ -51,13 +59,10 @@ function main() {
                     for (var j in content.result.items[i].tagValues) {
                         
                         var valValue = content.result.items[i].tagValues[j].value;
-                        if(nameTranslation[content.result.items[i].tagValues[j].tagName]) {
-                            valTagLang = nameTranslation[content.result.items[i].tagValues[j].tagName];
-                        } else {
-                            valTagLang = content.result.items[i].tagValues[j].tagName;
-                        }
+                        valTagLang = translateName(content.result.items[i].tagValues[j].tagName);
                         var valType = typeof valValue;
                         var valTag = content.result.items[i].tagValues[j].tagName;
+                        var strGroup;
                         
                         switch (valType) {
                             case "boolean":
@@ -103,8 +108,18 @@ function main() {
 
                         if (valValue != null && valType != 'object') {
 
+                            if (content.result.items[i].guid.indexOf('ERC') == 0) {
+                                strGroup = translateName("basics");
+                            } else if (content.result.items[i].guid.indexOf('location') > -1) {
+                                strGroup = translateName("location");
+                            } else if (content.result.items[i].guid.indexOf('pvplant') > -1) {
+                                strGroup = translateName("pv-plant");
+                            } else {
+                                strGroup = content.result.items[i].guid;
+                            }
+
                             adapter.setObjectNotExists(
-                                content.result.items[i].guid + "." + valTag, {
+                                strGroup + "." + valTag, {
                                     type: 'state',
                                     common: {
                                         name: valTagLang,
@@ -114,7 +129,7 @@ function main() {
                                     native: {}
                                 },
                                 adapter.setState(
-                                    content.result.items[i].guid + "." + valTag,
+                                    strGroup + "." + valTag,
                                     {val: valValue, ack: true}
                                 )
                             );
