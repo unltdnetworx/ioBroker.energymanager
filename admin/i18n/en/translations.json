@@ -84,7 +84,13 @@
   "WorkIn": "work (Wh) in",
   "WorkOut": "work (Wh) out",
   "PowerConsumedFromProducers": "direct consumed",
-  "location": "location",
-  "pv-plant": "pv-plant",
-  "basics": "basic-data"
+  "Location": "location",
+  "PVPlant": "pv-plant",
+  "BatteryConverter": "battery-converter",
+  "Forecast": "forecast",
+  "EnergyManager": "energymanager",
+  "S0Counter": "s0-counter",
+  "SMAInverter": "SMA-inverter",
+  "MyReserveInverter": "MyReserve-inverter",
+  "MyReservePowermeter": "MyReserve-powermeter"
 }

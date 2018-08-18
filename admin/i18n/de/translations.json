@@ -84,7 +84,13 @@
   "WorkIn": "Arbeit (Wh) Bezug",
   "WorkOut": "Arbeit (Wh) Einspeisung",
   "PowerConsumedFromProducers": "Direktverbrauch",
-  "location": "Standort",
-  "pv-plant": "PV-Anlage",
-  "basics": "Anlagen-Grunddaten"
+  "Location": "Standort",
+  "PVPlant": "PV-Anlage",
+  "BatteryConverter": "Batteriekonverter",
+  "Forecast": "Prognose",
+  "EnergyManager": "Energy-Manager",
+  "S0Counter": "S0-Zähler",
+  "SMAInverter": "SMA-Wechselrichter",
+  "MyReserveInverter": "MyReserve-Wechselrichter",
+  "MyReservePowermeter": "MyReserve-Leistungsmesser"
 }

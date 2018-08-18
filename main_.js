@@ -72,7 +72,6 @@ function main() {
                             case "number":
                                 if (valTag.search('Date') > -1){
                                     var valRole = 'value.datetime';
-                                    valValue = new Date(valValue);
                                     break;
                                 }
                                 if (valTag.search('StateOfCharge') == 0){
@@ -109,15 +108,14 @@ function main() {
 
                         if (valValue != null && valType != 'object') {
 
-                            switch(content.result.items[i].deviceModel[1].deviceClass) {
-                                case "com.kiwigrid.devices.inverter.Inverter":
-                                case "com.kiwigrid.devices.powermeter.PowerMeter":
-                                    strGroup=translateName(content.result.items[i].deviceModel[2].deviceClass.split(".").pop());
-                                break;
-                
-                                default:
-                                    strGroup=translateName(content.result.items[i].deviceModel[1].deviceClass.split(".").pop());
-                                break;
+                            if (content.result.items[i].guid.indexOf('ERC') == 0) {
+                                strGroup = translateName("basics");
+                            } else if (content.result.items[i].guid.indexOf('location') > -1) {
+                                strGroup = translateName("location");
+                            } else if (content.result.items[i].guid.indexOf('pvplant') > -1) {
+                                strGroup = translateName("pv-plant");
+                            } else {
+                                strGroup = content.result.items[i].guid;
                             }
 
                             adapter.setObjectNotExists(
