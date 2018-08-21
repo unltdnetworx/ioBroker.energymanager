@@ -16,6 +16,9 @@ Help or hints are welcome.
 
 ## Changelog
 
+### 0.1.2
+* units for values added.
+
 ### 0.1.1
 * dropdown for the managertype was deleted, because it also works with solarwatt without special configuration.
 

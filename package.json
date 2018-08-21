@@ -1,6 +1,6 @@
 {
   "name": "iobroker.energymanager",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "energymanager for kiwigrid powered devices",
   "author": {
     "name": "Michael Schuster",

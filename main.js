@@ -63,6 +63,7 @@ function main() {
                         var valType = typeof valValue;
                         var valTag = content.result.items[i].tagValues[j].tagName;
                         var strGroup;
+                        var valUnit;
                         
                         switch (valType) {
                             case "boolean":
@@ -107,6 +108,27 @@ function main() {
                                 break;
                         }
 
+                        if (valTag.search('Work') == 0){
+                            valValue = valValue/1000;
+                            valUnit = 'kWh';
+                        } else if (valTag.search('Temperature') == 0) {
+                            valUnit = '°C';
+                        } else if (valTag.search('Price') == 0) {
+                            valUnit = 'ct/kWh';
+                        } else if (valTag.search('Degree') == 0) {
+                            valUnit = '°';
+                        } else if (valTag.search('Voltage') == 0) { 
+                            valUnit = 'V';
+                        } else if (valTag.search('StateOf') == 0) { 
+                            valUnit = '%';
+                        } else if (valTag.search('Resistance') == 0) { 
+                            valUnit = 'Ohm';
+                        } else if (valTag.search('Power') == 0) { 
+                                valUnit = 'A';
+                        } else {
+                            valUnit = '';
+                        }
+
                         if (valValue != null && valType != 'object') {
 
                             switch(content.result.items[i].deviceModel[1].deviceClass) {
@@ -126,6 +148,9 @@ function main() {
                                     common: {
                                         name: valTagLang,
                                         type: valType,
+                                        read: true,
+                                        write: false,
+                                        unit: valUnit,
                                         role: valRole
                                     },
                                     native: {}
