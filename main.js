@@ -124,7 +124,7 @@ function main() {
                         } else if (valTag.search('Resistance') == 0) { 
                             valUnit = 'Ohm';
                         } else if (valTag.search('Power') == 0) { 
-                                valUnit = 'A';
+                                valUnit = 'W';
                         } else {
                             valUnit = '';
                         }
