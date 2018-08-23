@@ -7,11 +7,12 @@
 'use strict';
 
 const utils = require(__dirname + '/lib/utils');
-var request = require('request');
-var systemLanguage;
-var nameTranslation;
-
 const adapter = new utils.Adapter('energymanager');
+var request = require('request');
+let systemLanguage;
+let nameTranslation;
+let managerIntervall;
+let valTagLang;
 
 adapter.on('ready', function () {
     adapter.getForeignObject('system.config', function (err, obj) {
@@ -26,10 +27,15 @@ adapter.on('ready', function () {
                 systemLanguage = obj.common.language;
                 nameTranslation = require(__dirname + '/admin/i18n/' + systemLanguage + '/translations.json')
             }
+            managerIntervall = setInterval(main, (adapter.config.managerIntervall * 1000));
             main();
         }
     });
-    
+
+});
+
+adapter.on('unload', function (callback) {
+    if (managerIntervall) clearInterval(managerIntervall);
 });
 
 function translateName(strName) {
@@ -42,12 +48,9 @@ function translateName(strName) {
 
 function main() {
 
-    var managerAddress = adapter.config.managerAddress
-    var valTagLang;
-
     request(
         {
-            url: "http://" + managerAddress + "/rest/kiwigrid/wizard/devices",
+            url: "http://" + adapter.config.managerAddress + "/rest/kiwigrid/wizard/devices",
             json: true
         },
         function(error, response, content) {
@@ -110,6 +113,7 @@ function main() {
 
                         if (valTag.search('Work') == 0){
                             valValue = valValue/1000;
+                            valValue = valValue.toFixed(2) 
                             valUnit = 'kWh';
                         } else if (valTag.search('Temperature') == 0) {
                             valUnit = '°C';
@@ -124,7 +128,8 @@ function main() {
                         } else if (valTag.search('Resistance') == 0) { 
                             valUnit = 'Ohm';
                         } else if (valTag.search('Power') == 0) { 
-                            valValue = valValue/1000;    
+                            valValue = valValue/1000;
+                            valValue = valValue.toFixed(2)    
                             valUnit = 'kW';
                         } else {
                             valUnit = '';
@@ -166,11 +171,9 @@ function main() {
                         
                     }
                 }
-                adapter.stop();
 
             } else {
                 adapter.log.error(error);
-                adapter.stop();
             }
         }
 
