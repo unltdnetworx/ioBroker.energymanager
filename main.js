@@ -111,9 +111,14 @@ function main() {
                                 break;
                         }
 
+                        /* Round values up */
+                        if (valTag.sarch(/CurrentBattery(In|Out)$|ResistanceBattery(Min|Max|Mean)$|VoltageBattery.*|VoltageGRM(Out|In)$/i) == 0) {
+                            valValue = valValue.toFixed(2);
+                        }
+
+                        /* Try to detect the valValue units */
                         if (valTag.search('Work') == 0){
-                            valValue = valValue/1000;
-                            valValue = valValue.toFixed(2) 
+                            valValue = (valValue/1000).toFixed(2);
                             valUnit = 'kWh';
                         } else if (valTag.search('Temperature') == 0) {
                             valUnit = '°C';
@@ -128,8 +133,7 @@ function main() {
                         } else if (valTag.search('Resistance') == 0) { 
                             valUnit = 'Ohm';
                         } else if (valTag.search('Power') == 0) { 
-                            valValue = valValue/1000;
-                            valValue = valValue.toFixed(2)    
+                            valValue = (valValue/1000).toFixed(2);   
                             valUnit = 'kW';
                         } else {
                             valUnit = '';
