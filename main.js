@@ -112,7 +112,7 @@ function main() {
                         }
 
                         /* Round values up */
-                        if (valTag.sarch(/CurrentBattery(In|Out)$|ResistanceBattery(Min|Max|Mean)$|VoltageBattery.*|VoltageGRM(Out|In)$/i) == 0) {
+                        if (valTag.search(/CurrentBattery(In|Out)$|ResistanceBattery(Min|Max|Mean)$|VoltageBattery.*|VoltageGRM(Out|In)$/i) == 0) {
                             valValue = valValue.toFixed(2);
                         }
 
