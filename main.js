@@ -53,7 +53,10 @@ adapter.on('stateChange', function (id, state) {
     
     if (command == 'managerReboot') {
         adapter.log.info('energymanager rebooting');
+        if (managerIntervall) clearInterval(managerIntervall);
         rebootManager();
+        //wait 5 minutes for hardware-reboot
+        setTimeout(main, 300000);
     }
 });
 
@@ -164,7 +167,7 @@ function getManagerValues() {
                             valUnit = '';
                         }
 
-                        if (valType == "number") {
+                        if (valType == "number" && valTag.search('Date') == -1) {
                             valValue = Math.round(valValue * 100) / 100;
                         }
 
