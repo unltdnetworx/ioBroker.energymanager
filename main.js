@@ -8,11 +8,13 @@
 
 const utils = require(__dirname + '/lib/utils');
 const adapter = new utils.Adapter('energymanager');
-var request = require('request');
+let request = require('request');
 let systemLanguage;
 let nameTranslation;
 let managerIntervall;
 let valTagLang;
+var url;
+var c = request.jar();
 
 adapter.on('ready', function () {
     adapter.getForeignObject('system.config', function (err, obj) {
@@ -27,16 +29,45 @@ adapter.on('ready', function () {
                 systemLanguage = obj.common.language;
                 nameTranslation = require(__dirname + '/admin/i18n/' + systemLanguage + '/translations.json')
             }
-            managerIntervall = setInterval(main, (adapter.config.managerIntervall * 1000));
+            url = "http://" + adapter.config.managerAddress + "/rest";
             main();
         }
     });
-
 });
 
 adapter.on('unload', function (callback) {
-    if (managerIntervall) clearInterval(managerIntervall);
+    try {
+        if (managerIntervall) clearInterval(managerIntervall);
+        adapter.log.info('cleaned everything up...');
+        callback();
+    } catch (e) {
+        callback();
+    }
 });
+
+adapter.on('stateChange', function (id, state) {
+    let command = id.split('.').pop();
+    
+    // you can use the ack flag to detect if it is status (true) or command (false)
+    if (!state || state.ack) return;
+    
+    if (command == 'managerReboot') {
+        adapter.log.info('energymanager rebooting');
+        rebootManager();
+    }
+});
+
+function rebootManager(){
+    request({
+        method: 'POST',
+        jar: c,
+        uri: url+"/login",
+        body: JSON.stringify({password: adapter.config.managerPassword})
+        }, function (error, response, body) {
+            request({jar: c,uri: url+"/reboot",method: 'POST'
+            })
+    })
+}
 
 function translateName(strName) {
     if(nameTranslation[strName]) {
@@ -46,8 +77,7 @@ function translateName(strName) {
     }
 }
 
-function main() {
-
+function getManagerValues() {
     request(
         {
             url: "http://" + adapter.config.managerAddress + "/rest/kiwigrid/wizard/devices",
@@ -57,16 +87,16 @@ function main() {
 
             if (!error && response.statusCode == 200) {
                 
-                for (var i in content.result.items) {
+                for (let i in content.result.items) {
 
-                    for (var j in content.result.items[i].tagValues) {
+                    for (let j in content.result.items[i].tagValues) {
                         
-                        var valValue = content.result.items[i].tagValues[j].value;
+                        let valValue = content.result.items[i].tagValues[j].value;
                         valTagLang = translateName(content.result.items[i].tagValues[j].tagName);
-                        var valType = typeof valValue;
-                        var valTag = content.result.items[i].tagValues[j].tagName;
-                        var strGroup;
-                        var valUnit;
+                        let valType = typeof valValue;
+                        let valTag = content.result.items[i].tagValues[j].tagName;
+                        let strGroup;
+                        let valUnit;
                         
                         switch (valType) {
                             case "boolean":
@@ -79,6 +109,7 @@ function main() {
                                     valValue = new Date(valValue);
                                     break;
                                 }
+                                
                                 if (valTag.search('StateOfCharge') == 0){
                                     var valRole = 'value.battery';
                                     break;
@@ -112,8 +143,7 @@ function main() {
                         }
 
                         if (valTag.search('Work') == 0){
-                            valValue = valValue/1000;
-                            valValue = valValue.toFixed(2) 
+                            valValue = valValue/1000; 
                             valUnit = 'kWh';
                         } else if (valTag.search('Temperature') == 0) {
                             valUnit = '°C';
@@ -128,11 +158,14 @@ function main() {
                         } else if (valTag.search('Resistance') == 0) { 
                             valUnit = 'Ohm';
                         } else if (valTag.search('Power') == 0) { 
-                            valValue = valValue/1000;
-                            valValue = valValue.toFixed(2)    
+                            valValue = valValue/1000;    
                             valUnit = 'kW';
                         } else {
                             valUnit = '';
+                        }
+
+                        if (valType == "number") {
+                            valValue = Math.round(valValue * 100) / 100;
                         }
 
                         if (valValue != null && valType != 'object') {
@@ -178,4 +211,29 @@ function main() {
         }
 
     )
+}
+
+function main() {
+    //Button for hardware reboot.
+    adapter.setObjectNotExists(
+        "managerReboot", {
+            type: 'state',
+            common: {
+                name: translateName("managerReboot"),
+                type: 'boolean',
+                role: 'button',
+                read: true,
+                write: true
+            },
+            native: {}
+        },
+        (adapter.setState(
+            "managerReboot",
+            {val: false, ack: false}
+        ),
+        adapter.subscribeStates('managerReboot'))
+    );
+
+    getManagerValues();
+    managerIntervall = setInterval(getManagerValues, (adapter.config.managerIntervall * 1000));
 }

@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "0.1.3",
+        "version": "0.2.0",
         "news": {
+            "0.2.0": {
+                "en": "hardware reboot button intalled. release candidate for stable 1.0.0",
+                "de": "Hardwareneustart integriert. Release Kandidat für stabile Version 1.0.0"
+            },
             "0.1.3": {
                 "en": "adapter chnged to daemon",
                 "de": "Adapter in daemon umgewandelt"

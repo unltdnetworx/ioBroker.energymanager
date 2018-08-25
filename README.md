@@ -16,6 +16,12 @@ Help or hints are welcome.
 
 ## Changelog
 
+### 0.2.0
+* hardware reboot button intalled. release candidate for stable 1.0.0
+
+### 0.1.3
+* adaptertype changed to daemon.
+
 ### 0.1.2
 * units for values added.
 
