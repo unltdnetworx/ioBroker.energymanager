@@ -206,7 +206,7 @@ function getManagerValues() {
                         }
                         if (valValue != null && valType != 'object') {
                             updateState (strGroup,valTag,valTagLang,valType,valUnit,valRole,valValue);
-                        } else if (valValue != null && valType == 'object' && valTag == 'WeatherForecast') {
+                        } /*else if (valValue != null && valType == 'object' && valTag == 'WeatherForecast') {
 
                             for (var location in valValue) {
                                 var jsonObject = JSON.parse(valValue[location]);
@@ -223,7 +223,7 @@ function getManagerValues() {
                                   }
                                 }
                             }
-                        } 
+                        }*/ 
                     }
                 }
 
