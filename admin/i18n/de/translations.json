@@ -97,5 +97,8 @@
   "S0Counter": "S0-Zähler",
   "SMAInverter": "SMA-Wechselrichter",
   "MyReserveInverter": "MyReserve-Wechselrichter",
-  "MyReservePowermeter": "MyReserve-Leistungsmesser"
+  "MyReservePowermeter": "MyReserve-Leistungsmesser",
+  "WeatherForecast": "Wettervorhersage",
+  "cloudCover": "Bewölkung",
+  "temperature": "Temperature"
 }
