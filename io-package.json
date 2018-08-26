@@ -84,6 +84,7 @@
     "native": {
         "managerType": "eon",
         "managerAddress": "",
-        "managerIntervall": 15
+        "managerIntervall": 15,
+        "weatherForecastDays": 2
     }
 }
