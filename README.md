@@ -16,6 +16,9 @@ Help or hints are welcome.
 
 ## Changelog
 
+### 1.0.0
+* confirmed stable release
+
 ### 0.2.0
 * hardware reboot button intalled. release candidate for stable 1.0.0
 

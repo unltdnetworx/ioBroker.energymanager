@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "0.2.0",
+        "version": "1.0.0",
         "news": {
+            "1.0.0": {
+                "en": "confirmed stable release",
+                "de": "Stabilität bestätigt"
+            },
             "0.2.0": {
                 "en": "hardware reboot button intalled. release candidate for stable 1.0.0",
                 "de": "Hardwareneustart integriert. Release Kandidat für stabile Version 1.0.0"
