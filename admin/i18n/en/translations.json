@@ -97,5 +97,8 @@
   "S0Counter": "s0-counter",
   "SMAInverter": "SMA-inverter",
   "MyReserveInverter": "MyReserve-inverter",
-  "MyReservePowermeter": "MyReserve-powermeter"
+  "MyReservePowermeter": "MyReserve-powermeter",
+  "WeatherForecast": "WeatherForecast",
+  "cloudCover": "cloudCover",
+  "temperature": "temperature"
 }

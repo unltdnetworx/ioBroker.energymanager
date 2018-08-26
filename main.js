@@ -80,6 +80,28 @@ function translateName(strName) {
     }
 }
 
+function updateState (strGroup,valTag,valTagLang,valType,valUnit,valRole,valValue) {
+    adapter.log.debug("strGroup: "+strGroup);
+    adapter.setObjectNotExists(
+        strGroup + "." + valTag, {
+            type: 'state',
+            common: {
+                name: valTagLang,
+                type: valType,
+                read: true,
+                write: false,
+                unit: valUnit,
+                role: valRole
+            },
+            native: {}
+        },
+        adapter.setState(
+            strGroup + "." + valTag,
+            {val: valValue, ack: true}
+        )
+    );
+}
+
 function getManagerValues() {
     request(
         {
@@ -170,9 +192,7 @@ function getManagerValues() {
                         if (valType == "number" && valTag.search('Date') == -1) {
                             valValue = Math.round(valValue * 100) / 100;
                         }
-
-                        if (valValue != null && valType != 'object') {
-
+                        if (valValue != null) {
                             switch(content.result.items[i].deviceModel[1].deviceClass) {
                                 case "com.kiwigrid.devices.inverter.Inverter":
                                 case "com.kiwigrid.devices.powermeter.PowerMeter":
@@ -183,28 +203,27 @@ function getManagerValues() {
                                     strGroup=translateName(content.result.items[i].deviceModel[1].deviceClass.split(".").pop());
                                 break;
                             }
-
-                            adapter.setObjectNotExists(
-                                strGroup + "." + valTag, {
-                                    type: 'state',
-                                    common: {
-                                        name: valTagLang,
-                                        type: valType,
-                                        read: true,
-                                        write: false,
-                                        unit: valUnit,
-                                        role: valRole
-                                    },
-                                    native: {}
-                                },
-                                adapter.setState(
-                                    strGroup + "." + valTag,
-                                    {val: valValue, ack: true}
-                                )
-                            );
-
                         }
+                        if (valValue != null && valType != 'object') {
+                            updateState (strGroup,valTag,valTagLang,valType,valUnit,valRole,valValue);
+                        } else if (valValue != null && valType == 'object' && valTag == 'WeatherForecast') {
+
+                            for (var location in valValue) {
+                                var jsonObject = JSON.parse(valValue[location]);
                         
+                                for ( var day in jsonObject.hourly) {
+
+                                  for (var hour in jsonObject.hourly[day]) {
+                                    var datum = new Date(jsonObject.hourly[day][hour].time*1000);
+                                    var localOffset = (-1) * datum.getTimezoneOffset() * 60000;
+                                    var stamp = new Date((jsonObject.hourly[day][hour].time*1000 + localOffset));
+                                    updateState(strGroup+"." + translateName('WeatherForecast') + "." + location + "." + day + "." + hour, 'cloudCover' ,translateName('cloudCover'), 'number','','value',jsonObject.hourly[day][hour].cloudCover);
+                                    updateState(strGroup+"." + translateName('WeatherForecast') + "." + location + "." + day + "." + hour, 'temperature' ,translateName('temperature'), 'number','°C','value.temperature',jsonObject.hourly[day][hour].temperature);
+                                    updateState(strGroup+"." + translateName('WeatherForecast') + "." + location + "." + day + "." + hour, 'date' ,translateName('date'), 'text','','value.date',stamp);
+                                  }
+                                }
+                            }
+                        } 
                     }
                 }
 
