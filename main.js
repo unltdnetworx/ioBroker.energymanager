@@ -211,7 +211,7 @@ function getManagerValues() {
                             for (var location in valValue) {
                                 var jsonObject = JSON.parse(valValue[location]);
                         
-                                for ( day = 0 ; day < adapter.config.weatherForecastDays ; day++) {
+                                for ( var day = 0 ; day < adapter.config.weatherForecastDays ; day++) {
                                   for (var hour in jsonObject.hourly[day]) {
                                     var datum = new Date(jsonObject.hourly[day][hour].time*1000);
                                     var localOffset = (-1) * datum.getTimezoneOffset() * 60000;
