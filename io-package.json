@@ -85,6 +85,6 @@
         "managerType": "eon",
         "managerAddress": "",
         "managerIntervall": 15,
-        "weatherForecastDays": 2
+        "weatherForecastDays": 0
     }
 }
