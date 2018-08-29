@@ -7,7 +7,7 @@
   "intervall": "intervall",
   "intervall for values to pull": "Intervall to pull new values from energymanager",
   "manager password": "energymanager password",
-  "managerReboot": "hardware reboot",
+  "managerReboot": "hardware (hardware) reboot",
   "password for the energymanager": "hardwarepassword on top of the device",
   "Confirmed for E.ON energymanager and Solarwatt manager. Other kiwigrid-powered devices could work.": "Confirmed for E.ON energymanager and Solarwatt manager. Other kiwigrid-powered devices could work.",
   "DateCloudLastSeen": "last contact with cloud",

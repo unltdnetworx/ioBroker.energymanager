@@ -249,11 +249,7 @@ function main() {
             },
             native: {}
         },
-        (adapter.setState(
-            "managerReboot",
-            {val: false, ack: false}
-        ),
-        adapter.subscribeStates('managerReboot'))
+        adapter.subscribeStates('managerReboot')
     );
 
     getManagerValues();
