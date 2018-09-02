@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "1.0.1",
+        "version": "1.1.0",
         "news": {
+            "1.1.0": {
+                "en": "support for multiple powerplants on one energymanager",
+                "de": "Unterstützung für mehrere PV-Anlagen an einem Energymanager"
+            },
             "1.0.1": {
                 "en": "bugfix for hardware reboot",
                 "de": "Fehler im Hardware-Reboot behoben"

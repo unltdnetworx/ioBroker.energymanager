@@ -97,7 +97,7 @@ function updateState (strGroup,valTag,valTagLang,valType,valUnit,valRole,valValu
         },
         adapter.setState(
             strGroup + "." + valTag,
-            {val: valValue, ack: true}
+            {val: valValue, ack: true, expire: (adapter.config.managerIntervall*2)} //value expires if adapter can't pull it from hardware
         )
     );
 }
@@ -198,6 +198,19 @@ function getManagerValues() {
                                 case "com.kiwigrid.devices.powermeter.PowerMeter":
                                     strGroup=translateName(content.result.items[i].deviceModel[2].deviceClass.split(".").pop());
                                 break;
+
+                                case "com.kiwigrid.devices.location.Location":
+                                case "com.kiwigrid.devices.pvplant.PVPlant":
+                                    let IDNameClear = content.result.items[i].tagValues.IdName.value
+                                    IDNameClear = IDNameClear
+                                        .replace(/[ ]+/g,"_")
+                                        .replace(/[\.]+/g,"")
+                                        .replace(/[\u00c4 \u00e4]+/,"AE")
+                                        .replace(/[\u00d6 \u00f6]+/,"OE")
+                                        .replace(/[\u00dc \u00fc]+/,"UE")
+                                        .replace(/[\u00df]+/,"SS");
+                                    strGroup=translateName(content.result.items[i].deviceModel[1].deviceClass.split(".").pop()) + "_" + IDNameClear;
+                                    break;
                 
                                 default:
                                     strGroup=translateName(content.result.items[i].deviceModel[1].deviceClass.split(".").pop());
