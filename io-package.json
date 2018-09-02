@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "news": {
+            "1.1.2": {
+                "en": "bugfixes for converters",
+                "de": "Bugfixes für Wechselrichter"
+            },
             "1.1.1": {
                 "en": "support for multiple converters on one energymanager",
                 "de": "Unterstützung für mehrere Wechselrichter an einem Energymanager"

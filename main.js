@@ -193,23 +193,20 @@ function getManagerValues() {
                             valValue = Math.round(valValue * 100) / 100;
                         }
                         if (valValue != null) {
+                            let IDNameClear = content.result.items[i].tagValues.IdName.value
+                                    IDNameClear = IDNameClear
+                                        .replace(/[ ]+/g,"_")
+                                        .replace(/[\.]+/g,"")
+                                        .replace(/[\u00df]+/,"SS");
                             switch(content.result.items[i].deviceModel[1].deviceClass) {
                                 case "com.kiwigrid.devices.inverter.Inverter":
                                 case "com.kiwigrid.devices.powermeter.PowerMeter":
-                                    strGroup=translateName(content.result.items[i].deviceModel[2].deviceClass.split(".").pop()) + "_" + IDNameClear;
+                                    strGroup=translateName(content.result.items[i].deviceModel[2].deviceClass.split(".").pop()) + "_(" + IDNameClear + ")";
                                 break;
 
                                 case "com.kiwigrid.devices.location.Location":
                                 case "com.kiwigrid.devices.pvplant.PVPlant":
-                                    let IDNameClear = content.result.items[i].tagValues.IdName.value
-                                    IDNameClear = IDNameClear
-                                        .replace(/[ ]+/g,"_")
-                                        .replace(/[\.]+/g,"")
-                                        .replace(/[\u00c4 \u00e4]+/,"AE")
-                                        .replace(/[\u00d6 \u00f6]+/,"OE")
-                                        .replace(/[\u00dc \u00fc]+/,"UE")
-                                        .replace(/[\u00df]+/,"SS");
-                                    strGroup=translateName(content.result.items[i].deviceModel[1].deviceClass.split(".").pop()) + "_" + IDNameClear;
+                                    strGroup=translateName(content.result.items[i].deviceModel[1].deviceClass.split(".").pop()) + "_(" + IDNameClear + ")";
                                     break;
                 
                                 default:
