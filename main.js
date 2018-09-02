@@ -196,7 +196,7 @@ function getManagerValues() {
                             switch(content.result.items[i].deviceModel[1].deviceClass) {
                                 case "com.kiwigrid.devices.inverter.Inverter":
                                 case "com.kiwigrid.devices.powermeter.PowerMeter":
-                                    strGroup=translateName(content.result.items[i].deviceModel[2].deviceClass.split(".").pop());
+                                    strGroup=translateName(content.result.items[i].deviceModel[2].deviceClass.split(".").pop()) + "_" + IDNameClear;
                                 break;
 
                                 case "com.kiwigrid.devices.location.Location":
