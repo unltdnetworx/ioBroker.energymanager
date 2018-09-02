@@ -16,6 +16,18 @@ Help or hints are welcome.
 
 ## Changelog
 
+### 1.1.2
+* bugfixes for converters
+
+### 1.1.1
+* support for multiple converters on one energymanager
+
+### 1.1.0
+* support for multiple powerplants on one energymanager
+
+### 1.0.1
+* bugfix for hardware reboot
+
 ### 1.0.0
 * confirmed stable release
 
