@@ -16,6 +16,9 @@ Help or hints are welcome.
 
 ## Changelog
 
+### 1.1.3
+* code cleanup
+
 ### 1.1.2
 * bugfixes for converters
 
