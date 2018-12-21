@@ -100,5 +100,8 @@
   "MyReservePowermeter": "MyReserve-powermeter",
   "WeatherForecast": "WeatherForecast",
   "cloudCover": "cloudCover",
-  "temperature": "temperature"
+  "temperature": "temperature",
+  "yes": ["ja"],
+  "no": ["nein"],
+  "round values": ["round values (Wh -> kWh)"]
 }

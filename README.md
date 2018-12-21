@@ -16,6 +16,9 @@ Help or hints are welcome.
 
 ## Changelog
 
+### 1.1.4
+* value rounding is now optional. Wh -> kWh
+
 ### 1.1.3
 * code cleanup
 

@@ -168,8 +168,12 @@ function getManagerValues() {
                         }
 
                         if (valTag.search('Work') == 0){
-                            valValue = valValue/1000; 
-                            valUnit = 'kWh';
+                            if (adapter.config.managerRounding == "no") {
+                                valUnit = 'Wh';
+                            } else {
+                                valValue = valValue/1000; 
+                                valUnit = 'kWh';
+                            }
                         } else if (valTag.search('Temperature') == 0) {
                             valUnit = '°C';
                         } else if (valTag.search('Price') == 0) {
@@ -183,8 +187,12 @@ function getManagerValues() {
                         } else if (valTag.search('Resistance') == 0) { 
                             valUnit = 'Ohm';
                         } else if (valTag.search('Power') == 0) { 
-                            valValue = valValue/1000;    
-                            valUnit = 'kW';
+                            if (adapter.config.managerRounding == "no") {
+                                valUnit = 'W';
+                            } else {
+                                valValue = valValue/1000;    
+                                valUnit = 'kW';
+                            } 
                         } else {
                             valUnit = '';
                         }
