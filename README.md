@@ -16,6 +16,9 @@ Help or hints are welcome.
 
 ## Changelog
 
+### 1.2.0
+* support for compact-mode added
+
 ### 1.1.4
 * value rounding is now optional. Wh -> kWh
 

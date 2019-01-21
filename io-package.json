@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "1.1.4",
+        "version": "1.2.0",
         "news": {
+            "1.2.0": {
+                "en": "support for compact-mode added",
+                "de": "Kompakt-Modus wird zukünftig unterstützt"
+            },
             "1.1.4": {
                 "en": "value rounding is now optional. Wh -> kWh",
                 "de": "Rundung von Werten ist nun optional. Wh -> kWh"
@@ -103,7 +107,8 @@
         "loglevel": "info",
         "type": "energy",
         "license": "MIT",
-        "messagebox": false
+        "messagebox": false,
+        "compact": true
     },
     "native": {
         "managerType": "eon",

@@ -7,7 +7,6 @@
 'use strict';
 
 const utils = require(__dirname + '/lib/utils');
-const adapter = new utils.Adapter('energymanager');
 let request = require('request');
 let systemLanguage;
 let nameTranslation;
@@ -16,49 +15,57 @@ let valTagLang;
 var url;
 var c = request.jar();
 
-adapter.on('ready', function () {
-    adapter.getForeignObject('system.config', function (err, obj) {
-        if (err) {
-            adapter.log.error(err);
-            return;
-        } else if (obj) {
-            if (!obj.common.language) {
-                adapter.log.info("Language not set. English set therefore.");
-                nameTranslation = require(__dirname + '/admin/i18n/en/translations.json')
-            } else {
-                systemLanguage = obj.common.language;
-                nameTranslation = require(__dirname + '/admin/i18n/' + systemLanguage + '/translations.json')
+let adapter;
+function startAdapter(options) {
+    options = options || {};
+    Object.assign(options, {
+        name: 'energymanager',
+        stateChange: function (id, state) {
+            let command = id.split('.').pop();
+            
+            // you can use the ack flag to detect if it is status (true) or command (false)
+            if (!state || state.ack) return;
+            
+            if (command == 'managerReboot') {
+                adapter.log.info('energymanager rebooting');
+                if (managerIntervall) clearInterval(managerIntervall);
+                rebootManager();
+                //wait 5 minutes for hardware-reboot
+                setTimeout(main, 300000);
             }
-            url = "http://" + adapter.config.managerAddress + "/rest";
-            main();
+        },
+        unload: function (callback) {
+            try {
+                if (managerIntervall) clearInterval(managerIntervall);
+                adapter.log.info('cleaned everything up...');
+                callback();
+            } catch (e) {
+                callback();
+            }
+        },
+        ready: function () {
+            adapter.getForeignObject('system.config', function (err, obj) {
+                if (err) {
+                    adapter.log.error(err);
+                    return;
+                } else if (obj) {
+                    if (!obj.common.language) {
+                        adapter.log.info("Language not set. English set therefore.");
+                        nameTranslation = require(__dirname + '/admin/i18n/en/translations.json')
+                    } else {
+                        systemLanguage = obj.common.language;
+                        nameTranslation = require(__dirname + '/admin/i18n/' + systemLanguage + '/translations.json')
+                    }
+                    url = "http://" + adapter.config.managerAddress + "/rest";
+                    main();
+                }
+            });
         }
     });
-});
-
-adapter.on('unload', function (callback) {
-    try {
-        if (managerIntervall) clearInterval(managerIntervall);
-        adapter.log.info('cleaned everything up...');
-        callback();
-    } catch (e) {
-        callback();
-    }
-});
-
-adapter.on('stateChange', function (id, state) {
-    let command = id.split('.').pop();
+    adapter = new utils.Adapter(options);
     
-    // you can use the ack flag to detect if it is status (true) or command (false)
-    if (!state || state.ack) return;
-    
-    if (command == 'managerReboot') {
-        adapter.log.info('energymanager rebooting');
-        if (managerIntervall) clearInterval(managerIntervall);
-        rebootManager();
-        //wait 5 minutes for hardware-reboot
-        setTimeout(main, 300000);
-    }
-});
+    return adapter;
+};
 
 function rebootManager(){
     request({
@@ -273,3 +280,11 @@ function main() {
     getManagerValues();
     managerIntervall = setInterval(getManagerValues, (adapter.config.managerIntervall * 1000));
 }
+
+// If started as allInOne/compact mode => return function to create instance
+if (module && module.parent) {
+    module.exports = startAdapter;
+} else {
+    // or start the instance directly
+    startAdapter();
+} 
