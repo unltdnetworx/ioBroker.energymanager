@@ -2,6 +2,12 @@
 # ioBroker.energymanager
 =================
 
+[![Build Status](https://api.travis-ci.org/unltdnetworx/ioBroker.energymanager.svg?branch=master)](https://travis-ci.org/unltdnetworx/ioBroker.energymanager)
+[![NPM version](https://img.shields.io/npm/v/iobroker.energymanager.svg)](https://www.npmjs.com/package/iobroker.energymanager)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.energymanager.svg)](https://www.npmjs.com/package/iobroker.energymanager)
+
+[![NPM](https://nodei.co/npm/iobroker.energymanager.png?downloads=true)](https://nodei.co/npm/iobroker.energymanager/)
+
 This adapter is a ment to read values from devices powered by the kiwigrid network like the E.ON Energymanager into ioBroker. Also confirmed is the Solarwatt manager. It's possible that there are other devices working with this adapter, maybe innogy or enviam.
 
 Help or hints are welcome.
