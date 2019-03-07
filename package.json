@@ -30,7 +30,8 @@
     "url": "https://github.com/unltdnetworx/ioBroker.energymanager"
   },
   "dependencies": {
-    "request": "^2.72.0"
+    "request": "^2.72.0",
+    "@iobroker/adapter-core": "^1.0.3"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
