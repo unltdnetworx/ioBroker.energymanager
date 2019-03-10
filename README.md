@@ -1,6 +1,6 @@
 ![Logo](admin/energymanager.png)
 # ioBroker.energymanager
-=================
+![Number of Installations](http://iobroker.live/badges/energymanager-installed.svg) ![Number of Installations](http://iobroker.live/badges/energymanager-stable.svg) =================
 
 [![Build Status](https://api.travis-ci.org/unltdnetworx/ioBroker.energymanager.svg?branch=master)](https://travis-ci.org/unltdnetworx/ioBroker.energymanager)
 [![NPM version](https://img.shields.io/npm/v/iobroker.energymanager.svg)](https://www.npmjs.com/package/iobroker.energymanager)
