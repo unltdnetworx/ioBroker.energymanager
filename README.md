@@ -22,6 +22,9 @@ Help or hints are welcome.
 
 ## Changelog
 
+### 1.2.1
+* Core Files/Testing Update and introduce adapter-core
+
 ### 1.2.0
 * support for compact-mode added
 

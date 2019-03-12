@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "1.2.0",
+        "version": "1.2.1",
         "news": {
+            "1.2.1": {
+                "en": "Core Files/Testing Update and introduce adapter-core",
+                "de": "Adapter-Core implementiert"
+            },
             "1.2.0": {
                 "en": "support for compact-mode added",
                 "de": "Kompakt-Modus wird zukünftig unterstützt"
