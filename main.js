@@ -213,20 +213,22 @@ function getManagerValues() {
                                         .replace(/[ ]+/g,"_")
                                         .replace(/[\.]+/g,"")
                                         .replace(/[\u00df]+/,"SS");
-                            switch(content.result.items[i].deviceModel[1].deviceClass) {
-                                case "com.kiwigrid.devices.inverter.Inverter":
-                                case "com.kiwigrid.devices.powermeter.PowerMeter":
-                                    strGroup=translateName(content.result.items[i].deviceModel[2].deviceClass.split(".").pop()) + "_(" + IDNameClear + ")";
-                                break;
-
-                                case "com.kiwigrid.devices.location.Location":
-                                case "com.kiwigrid.devices.pvplant.PVPlant":
-                                    strGroup=translateName(content.result.items[i].deviceModel[1].deviceClass.split(".").pop()) + "_(" + IDNameClear + ")";
+                            if(content.result.items[i].deviceModel[1].deviceClass !== undefined) {
+                                switch(content.result.items[i].deviceModel[1].deviceClass) {
+                                    case "com.kiwigrid.devices.inverter.Inverter":
+                                    case "com.kiwigrid.devices.powermeter.PowerMeter":
+                                        strGroup=translateName(content.result.items[i].deviceModel[2].deviceClass.split(".").pop()) + "_(" + IDNameClear + ")";
                                     break;
-                
-                                default:
-                                    strGroup=translateName(content.result.items[i].deviceModel[1].deviceClass.split(".").pop());
-                                break;
+    
+                                    case "com.kiwigrid.devices.location.Location":
+                                    case "com.kiwigrid.devices.pvplant.PVPlant":
+                                        strGroup=translateName(content.result.items[i].deviceModel[1].deviceClass.split(".").pop()) + "_(" + IDNameClear + ")";
+                                        break;
+                    
+                                    default:
+                                        strGroup=translateName(content.result.items[i].deviceModel[1].deviceClass.split(".").pop());
+                                    break;
+                                }
                             }
                         }
                         if (valValue != null && valType != 'object') {

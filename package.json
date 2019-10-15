@@ -1,10 +1,11 @@
 {
-  "name": "iobroker.energymanager",
-  "version": "1.2.1",
-  "description": "energymanager for kiwigrid powered devices",
+  "version": "1.2.2",
   "author": {
     "name": "Michael Schuster",
     "email": "development@unltd-networx.de"
+  },
+  "bugs": {
+    "url": "https://github.com/unltdnetworx/ioBroker.energymanager/issues"
   },
   "contributors": [
     {
@@ -12,8 +13,19 @@
       "email": "development@unltd-networx.de"
     }
   ],
+  "dependencies": {
+    "@iobroker/adapter-core": "^1.0.3",
+    "request": "^2.88.0"
+  },
+  "deprecated": false,
+  "description": "energymanager for kiwigrid powered devices",
+  "devDependencies": {
+    "@iobroker/testing": "^1.3.0",
+    "chai": "^4.2.0",
+    "gulp": "^4.0.2",
+    "mocha": "^6.2.1"
+  },
   "homepage": "https://github.com/unltdnetworx/ioBroker.energymanager",
-  "license": "MIT",
   "keywords": [
     "ioBroker",
     "energymanager",
@@ -25,25 +37,17 @@
     "innogy",
     "enviam"
   ],
+  "license": "MIT",
+  "main": "main.js",
+  "name": "iobroker.energymanager",
   "repository": {
     "type": "git",
-    "url": "https://github.com/unltdnetworx/ioBroker.energymanager"
+    "url": "git+https://github.com/unltdnetworx/ioBroker.energymanager.git"
   },
-  "dependencies": {
-    "request": "^2.72.0",
-    "@iobroker/adapter-core": "^1.0.3"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "mocha": "^4.1.0",
-    "chai": "^4.1.2"
-  },
-  "main": "main.js",
   "scripts": {
-    "test": "node node_modules/mocha/bin/mocha --exit"
-  },
-  "bugs": {
-    "url": "https://github.com/unltdnetworx/ioBroker.energymanager/issues"
-  },
-  "readmeFilename": "README.md"
+    "test": "npm run test:package && npm run test:unit",
+    "test:package": "mocha test/package --exit",
+    "test:unit": "mocha test/unit --exit",
+    "test:integration": "mocha test/integration --exit"
+  }
 }

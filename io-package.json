@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "1.2.1",
+        "version": "1.2.2",
         "news": {
+            "1.2.2": {
+                "en": "new adapter-testing and small bugfix",
+                "de": "neues Adaptertestverfahren und kleine Fehlerbehung"
+            },
             "1.2.1": {
                 "en": "Core Files/Testing Update and introduce adapter-core",
                 "de": "Adapter-Core implementiert"
@@ -96,6 +100,10 @@
         "authors": [
             "Michael Schuster <development@unltd-networx.de>"
         ],
+        "docs": {
+            "en": "docs/en/admin.md",
+            "de": "docs/de/admin.md"
+        },
         "platform": "Javascript/Node.js",
         "mode": "daemon",
         "icon": "energymanager.png",
