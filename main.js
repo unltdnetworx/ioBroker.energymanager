@@ -213,7 +213,7 @@ function getManagerValues() {
                                         .replace(/[ ]+/g,"_")
                                         .replace(/[\.]+/g,"")
                                         .replace(/[\u00df]+/,"SS");
-                            if(content.result.items[i].deviceModel[1].deviceClass !== undefined) {
+                            if(content.result.items[i].deviceModel[1] !== undefined) {
                                 switch(content.result.items[i].deviceModel[1].deviceClass) {
                                     case "com.kiwigrid.devices.inverter.Inverter":
                                     case "com.kiwigrid.devices.powermeter.PowerMeter":
@@ -231,7 +231,7 @@ function getManagerValues() {
                                 }
                             }
                         }
-                        if (valValue != null && valType != 'object') {
+                        if (valValue != null && valType != 'object' && strGroup != '' && strGroup != undefined) {
                             updateState (strGroup,valTag,valTagLang,valType,valUnit,valRole,valValue);
                         } /*else if (valValue != null && valType == 'object' && valTag == 'WeatherForecast') {
 
