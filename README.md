@@ -107,6 +107,11 @@ Help or hints are welcome.
 
 * initial release
 
+## Donate
+
+Kaffee spendieren/serve a coffee
+<https://paypal.me/unltdnetworx>
+
 ## License
 
 The MIT License (MIT)
