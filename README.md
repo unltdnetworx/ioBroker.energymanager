@@ -26,6 +26,10 @@ Help or hints are welcome.
 
 ## Changelog
 
+### 1.2.3
+
+* new adapter testing and security update
+
 ### 1.2.2
 
 * new adapter-testing and small bugfix

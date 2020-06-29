@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "1.2.2",
+        "version": "1.2.3",
         "news": {
+            "1.2.3": {
+                "en": "new adapter testing and security update",
+                "de": "neue Version von Adapter testing und Sicherheits-Updates"
+            },
             "1.2.2": {
                 "en": "new adapter-testing and small bugfix",
                 "de": "neues Adaptertestverfahren und kleine Fehlerbehung"

@@ -1,5 +1,5 @@
 {
-  "version": "1.2.2",
+  "version": "1.2.3",
   "author": {
     "name": "Michael Schuster",
     "email": "development@unltd-networx.de"
@@ -24,7 +24,8 @@
     "chai": "^4.2.0",
     "eslint": "^7.3.1",
     "gulp": "^4.0.2",
-    "mocha": "^8.0.1"
+    "mocha": "^8.0.1",
+    "kind-of": ">=6.0.3"
   },
   "homepage": "https://github.com/unltdnetworx/ioBroker.energymanager",
   "keywords": [
