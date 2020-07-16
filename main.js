@@ -30,7 +30,7 @@ function startAdapter(options) {
             if (command == 'managerReboot') {
                 adapter.log.info('energymanager rebooting');
                 if (managerIntervall) clearInterval(managerIntervall);
-                if (hardwareTimeout) clearTimeout(timer);
+                if (hardwareTimeout) clearTimeout(hardwareTimeout);
                 rebootManager();
                 //wait 5 minutes for hardware-reboot
                 hardwareTimeout = setTimeout(main, 300000);
