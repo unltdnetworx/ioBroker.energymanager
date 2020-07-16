@@ -11,6 +11,7 @@ let request = require('request');
 let systemLanguage;
 let nameTranslation;
 let managerIntervall;
+let hardwareTimeout;
 let valTagLang;
 var url;
 var c = request.jar();
@@ -29,14 +30,16 @@ function startAdapter(options) {
             if (command == 'managerReboot') {
                 adapter.log.info('energymanager rebooting');
                 if (managerIntervall) clearInterval(managerIntervall);
+                if (hardwareTimeout) clearTimeout(timer);
                 rebootManager();
                 //wait 5 minutes for hardware-reboot
-                setTimeout(main, 300000);
+                hardwareTimeout = setTimeout(main, 300000);
             }
         },
         unload: function (callback) {
             try {
                 if (managerIntervall) clearInterval(managerIntervall);
+                if (hardwareTimeout) clearTimeout(timer);
                 adapter.log.info('cleaned everything up...');
                 callback();
             } catch (e) {

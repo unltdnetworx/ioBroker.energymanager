@@ -30,66 +30,6 @@
             "1.1.2": {
                 "en": "bugfixes for converters",
                 "de": "Bugfixes für Wechselrichter"
-            },
-            "1.1.1": {
-                "en": "support for multiple converters on one energymanager",
-                "de": "Unterstützung für mehrere Wechselrichter an einem Energymanager"
-            },
-            "1.1.0": {
-                "en": "support for multiple powerplants on one energymanager",
-                "de": "Unterstützung für mehrere PV-Anlagen an einem Energymanager"
-            },
-            "1.0.1": {
-                "en": "bugfix for hardware reboot",
-                "de": "Fehler im Hardware-Reboot behoben"
-            },
-            "1.0.0": {
-                "en": "confirmed stable release",
-                "de": "Stabilität bestätigt"
-            },
-            "0.2.0": {
-                "en": "hardware reboot button intalled. release candidate for stable 1.0.0",
-                "de": "Hardwareneustart integriert. Release Kandidat für stabile Version 1.0.0"
-            },
-            "0.1.3": {
-                "en": "adapter chnged to daemon",
-                "de": "Adapter in daemon umgewandelt"
-            },
-            "0.1.2": {
-                "en": "units for values added",
-                "de": "Einheiten für Werte hinzugefügt"
-            },
-            "0.1.1": {
-                "en": "dropdown for the managertype was deleted, icon changed",
-                "de": "Auswahl für verschiedene Managertypen enfernt, Logo geändert"
-            },
-            "0.1.0": {
-                "en": "bugfix and more translations added",
-                "de": "Fehlerbehebung und weitere Übersetzungen hinzugefügt"
-            },
-            "0.0.5": {
-                "en": "more translations added",
-                "de": "weitere Übersetzungen hinzugefügt"
-            },
-            "0.0.4": {
-                "en": "translation for objectnames integrated, not all translations integrated yet, will be extended",
-                "de": "Objektnamen werden jetzt übersetzt, nicht alle Übersetzungen eingearbeitet, weitere folgen"
-            },
-            "0.0.3": {
-                "en": "more detailed roles of objects",
-                "de": "Rollen der einzelnen Objekte werden genauer definiert"
-            },
-            "0.0.2": {
-                "en": "code validated",
-                "de": "Codevalidierung"
-            },
-            "0.0.1": {
-                "en": "initial adapter",
-                "de": "Initiale Version",
-                "ru": "Первоначальный адаптер",
-                "pt": "Versão inicial",
-                "fr": "Version initiale",
-                "nl": "Eerste release"
             }
         },
 		"title": "energymanager",
