@@ -104,11 +104,12 @@ function updateState (strGroup,valTag,valTagLang,valType,valUnit,valRole,valValu
                 role: valRole
             },
             native: {}
-        },
-        adapter.setState(
-            strGroup + "." + valTag,
-            {val: valValue, ack: true, expire: (adapter.config.managerIntervall*2)} //value expires if adapter can't pull it from hardware
-        )
+        }, function() {
+            adapter.setState(
+                strGroup + "." + valTag,
+                {val: valValue, ack: true, expire: (adapter.config.managerIntervall*2)} //value expires if adapter can't pull it from hardware
+            )
+        }
     );
 }
 
@@ -142,6 +143,7 @@ function getManagerValues() {
                                 if (valTag.search('Date') > -1){
                                     var valRole = 'value.datetime';
                                     valValue = new Date(valValue);
+                                    valValue = valValue.getTime();
                                     break;
                                 }
                                 
@@ -234,6 +236,7 @@ function getManagerValues() {
                                 }
                             }
                         }
+
                         if (valValue != null && valType != 'object' && strGroup != '' && strGroup != undefined) {
                             updateState (strGroup,valTag,valTagLang,valType,valUnit,valRole,valValue);
                         } /*else if (valValue != null && valType == 'object' && valTag == 'WeatherForecast') {

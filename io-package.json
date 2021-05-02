@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "1.2.3",
+        "version": "1.3.0",
         "news": {
+            "1.3.0": {
+                "en": "adaptions for new js-controller version",
+                "de": "Anpassungen für die neue Versions des JS-Controllers"
+            },
             "1.2.3": {
                 "en": "new adapter testing and security update",
                 "de": "neue Version von Adapter testing und Sicherheits-Updates"

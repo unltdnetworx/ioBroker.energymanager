@@ -26,6 +26,10 @@ Help or hints are welcome.
 
 ## Changelog
 
+### 1.3.0
+
+* adaptions for new js-controller
+
 ### 1.2.3
 
 * new adapter testing and security update
