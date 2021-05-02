@@ -141,7 +141,7 @@ function getManagerValues() {
                             
                             case "number":
                                 if (valTag.search('Date') > -1){
-                                    var valRole = 'value.datetime';
+                                    var valRole = 'value.time';
                                     valValue = new Date(valValue);
                                     valValue = valValue.getTime();
                                     break;
