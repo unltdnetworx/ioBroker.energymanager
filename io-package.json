@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "1.3.0",
+        "version": "1.3.1",
         "news": {
+            "1.3.1": {
+                "en": "bugfix for translation",
+                "de": "Fehlerbehebung für Übersetzung"
+            },
             "1.3.0": {
                 "en": "adaptions for new js-controller version",
                 "de": "Anpassungen für die neue Versions des JS-Controllers"
