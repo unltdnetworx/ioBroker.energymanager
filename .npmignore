@@ -9,3 +9,5 @@ test
 appveyor.yml
 /.vscode
 .vscode
+src/
+iob_npm.done

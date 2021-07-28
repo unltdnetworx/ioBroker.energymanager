@@ -68,7 +68,9 @@
         "type": "energy",
         "license": "MIT",
         "messagebox": false,
-        "compact": true
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "pull"
     },
     "native": {
         "managerType": "eon",
