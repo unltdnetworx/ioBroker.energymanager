@@ -70,7 +70,7 @@
         "messagebox": false,
         "compact": true,
         "connectionType": "local",
-        "dataSource": "pull"
+        "dataSource": "poll"
     },
     "native": {
         "managerType": "eon",
