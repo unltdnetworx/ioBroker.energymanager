@@ -26,6 +26,10 @@ Help or hints are welcome.
 
 ## Changelog
 
+### 1.3.3
+
+* bugfix
+
 ### 1.3.2
 
 * ready for Admin 5 and NodeJS 16
