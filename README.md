@@ -26,6 +26,10 @@ Help or hints are welcome.
 
 ## Changelog
 
+### 1.3.4
+
+* support for discovered but not installed devices
+
 ### 1.3.3
 
 * bugfix
@@ -106,22 +110,6 @@ Help or hints are welcome.
 ### 0.0.5
 
 * more translations added, to refresh states delete energymanager object with all values. will be created new.
-
-### 0.0.4
-
-* translation for objectnames integrated, translations will be extended
-
-### 0.0.3
-
-* roles of objects are now more detailed
-
-### 0.0.2
-
-* code validation for ioBroker project
-
-### 0.0.1
-
-* initial release
 
 ## Donate
 

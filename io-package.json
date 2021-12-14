@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "1.3.3",
+        "version": "1.3.4",
         "news": {
+            "1.3.4": {
+                "en": "support for discovered but not installed devices",
+                "de": "Unterstützung für erkannte aber nicht installierte Geräte"
+            },
             "1.3.3": {
                 "en": "bugfix",
                 "de": "Bugfix"
@@ -34,10 +38,6 @@
             "1.2.0": {
                 "en": "support for compact-mode added",
                 "de": "Kompakt-Modus wird zukünftig unterstützt"
-            },
-            "1.1.4": {
-                "en": "value rounding is now optional. Wh -> kWh",
-                "de": "Rundung von Werten ist nun optional. Wh -> kWh"
             }
         },
 		"title": "energymanager",

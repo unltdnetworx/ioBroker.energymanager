@@ -212,12 +212,12 @@ function getManagerValues() {
                         if (valType == "number" && valTag.search('Date') == -1) {
                             valValue = Math.round(valValue * 100) / 100;
                         }
-                        if (valValue != null) {
+                        if (valValue != null && content.result.items[i].tagValues.IdName.value != null) {
                             let IDNameClear = content.result.items[i].tagValues.IdName.value
-                                    IDNameClear = IDNameClear
-                                        .replace(/[ ]+/g,"_")
-                                        .replace(/[\.]+/g,"")
-                                        .replace(/[\u00df]+/,"SS");
+                                IDNameClear = IDNameClear
+                                    .replace(/[ ]+/g,"_")
+                                    .replace(/[\.]+/g,"")
+                                    .replace(/[\u00df]+/,"SS");
                             if(content.result.items[i].deviceModel[1] !== undefined) {
                                 switch(content.result.items[i].deviceModel[1].deviceClass) {
                                     case "com.kiwigrid.devices.inverter.Inverter":
