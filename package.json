@@ -20,7 +20,7 @@
   "deprecated": false,
   "description": "energymanager for kiwigrid powered devices",
   "devDependencies": {
-    "@alcalzone/release-script": "^1.6.0",
+    "@alcalzone/release-script": "^3.4.2",
     "chai": "^4.3.4",
     "eslint": "^8.4.1",
     "gulp": "^4.0.2",
