@@ -1,0 +1,9 @@
+.git
+.idea
+node_modules
+nbproject
+.vscode
+/.vscode
+iob_npm.done
+iobroker-data
+/iobroker-data
