@@ -5,65 +5,125 @@
         "news": {
             "1.4.2": {
                 "en": "security- and compatibilityupdate",
-                "de": "Sicherheits- und Kompatibilitätsupdate"
-            },
+                "de": "Sicherheits- und Kompatibilitätsupdate",
+                "ru": "безопасность и совместимость",
+                "pt": "segurança e compatibilidadeupdate",
+                "nl": "beveiliging en compatibiliteit",
+                "fr": "sécurité et compatibilité",
+                "it": "sicurezza e compatibilitàaggiornamento",
+                "es": "seguridad y compatibilidad",
+                "pl": "ubezpieczenie i kompatybilność",
+                "uk": "безпека та сумісність",
+                "zh-cn": "安全和兼容性"
+              },
             "1.4.1": {
                 "en": "clear version number",
-                "de": "Anpassung Versionsnummer"
-            },
+                "de": "Anpassung Versionsnummer",
+                "ru": "номер ясной версии",
+                "pt": "número de versão clara",
+                "nl": "duidelijke versie",
+                "fr": "numéro de version",
+                "it": "chiaro numero di versione",
+                "es": "versión clara",
+                "pl": "wersja",
+                "uk": "чистий номер версії",
+                "zh-cn": "明确版本"
+              },
             "1.3.5": {
-                "en": "changed year in readme and license",
-                "de": "Jahreszahl in Readme und License geändert"
-            },
+                "en": "changed the year in readme and license",
+                "de": "Jahr in readme und lizenz angepasst",
+                "ru": "изменил год в readme и лицензии",
+                "pt": "mudou o ano em readme e licença",
+                "nl": "veranderde het jaar in de rij",
+                "fr": "changé l'année en lecture et licence",
+                "it": "cambiato l'anno in lettura e licenza",
+                "es": "cambió el año en readme y licencia",
+                "pl": "zmienił rok w czytaniu i na licencji",
+                "uk": "змінено рік у режимі зчитування та ліцензії",
+                "zh-cn": "读者年改为:"
+              },
             "1.3.4": {
                 "en": "support for discovered but not installed devices",
-                "de": "Unterstützung für erkannte aber nicht installierte Geräte"
-            },
+                "de": "Unterstützung für erkannte, aber nicht installierte Geräte",
+                "ru": "поддержка обнаруженных, но не установленных устройств",
+                "pt": "suporte para dispositivos descobertos, mas não instalados",
+                "nl": "ondersteuning voor ontdekte maar niet geïnstalleerd apparatuur",
+                "fr": "support pour les dispositifs découverts mais non installés",
+                "it": "supporto per dispositivi scoperti ma non installati",
+                "es": "soporte para dispositivos descubiertos pero no instalados",
+                "pl": "wsparcie dla odkrytych, ale nie zainstalowanych urządzeń",
+                "uk": "підтримка відкритих, але не встановлених пристроїв",
+                "zh-cn": "对发现但未安装装置的支助"
+              },
             "1.3.3": {
                 "en": "bugfix",
-                "de": "Bugfix"
-            },
+                "de": "Fehlerbehebung",
+                "ru": "багфикс",
+                "pt": "correção de erros",
+                "nl": "vuur",
+                "fr": "bugfix",
+                "it": "bugfix",
+                "es": "bugfix",
+                "pl": "trąbka",
+                "uk": "шемале",
+                "zh-cn": "b ugfix"
+              },
             "1.3.2": {
                 "en": "ready for Admin 5 and NodeJS 16",
-                "de": "Anpassungen für Admin 5 and NodeJS 16"
-            },
-            "1.3.1": {
-                "en": "bugfix for translation",
-                "de": "Fehlerbehebung für Übersetzung"
-            },
-            "1.3.0": {
-                "en": "adaptions for new js-controller version",
-                "de": "Anpassungen für die neue Versions des JS-Controllers"
-            },
-            "1.2.3": {
-                "en": "new adapter testing and security update",
-                "de": "neue Version von Adapter testing und Sicherheits-Updates"
-            },
-            "1.2.2": {
-                "en": "new adapter-testing and small bugfix",
-                "de": "neues Adaptertestverfahren und kleine Fehlerbehung"
-            },
-            "1.2.1": {
-                "en": "Core Files/Testing Update and introduce adapter-core",
-                "de": "Adapter-Core implementiert"
-            }
+                "de": "bereit für Admin 5 und NodeJS 16",
+                "ru": "готов к Admin 5 и NodeJS 16",
+                "pt": "pronto para Admin 5 e NodeJS 16",
+                "nl": "klaar voor Admin 5 en NodeJS 16",
+                "fr": "prêt pour Admin 5 et NodeJS 16",
+                "it": "pronto per Admin 5 e NodeJS 16",
+                "es": "listo para Admin 5 y NodeJS 16",
+                "pl": "admin 5 i NodeJS 16",
+                "uk": "готовий до Admin 5 і NodeJS 16",
+                "zh-cn": "准备为Admin 5和NodeJS 16"
+              }
         },
-		"title": "energymanager",
         "titleLang": {
             "en": "energymanager",
-            "de": "energymanager"
-        },
+            "de": "energiemanager",
+            "ru": "энергоменеджер",
+            "pt": "energética",
+            "nl": "energiemanager",
+            "fr": "energymanager",
+            "it": "energiamanager",
+            "es": "energymanager",
+            "pl": "energeza",
+            "uk": "енергетика",
+            "zh-cn": "能源manager"
+          },
         "desc": {
             "en": "energymanager for kiwigrid-powered devices. confirmed for E.ON Aura and Solarwatt MyReserve",
-            "de": "Energymanager für Geräte die mit Kiwigrid Netzwerk laufen. Bestätogt für E.ON Aura Stromspeicher und Solarwatt MyReserve"
-        },
+            "de": "Energymanager für Geräte die mit Kiwigrid Netzwerk laufen. Bestätogt für E.ON Aura Stromspeicher und Solarwatt MyReserve",
+            "ru": "энергоменеджер для кивигридных устройств. подтверждено для E.ON Aura и Solarwatt MyReserve",
+            "pt": "energymanager para dispositivos alimentados por kiwigrid. confirmado para E.ON Aura e Solarwatt MyReserve",
+            "nl": "energiemanager voor kiwigrid-krachtige apparaten. Aura en Solarwatt MyReserve",
+            "fr": "energymanager for kiwigrid-powered devices. confirmé pour E.ON Aura et Solarwatt MyReserve",
+            "it": "energymanager per i dispositivi kiwigrid-powered. confermato per E.ON Aura e Solarwatt MyReserve",
+            "es": "gestor de energía para dispositivos con potencia de kiwigrid. confirmado por E.ON Aura y Solarwatt MyReserve",
+            "pl": "energimanager dla urządzeń napędowych kiwigrid. Potwierdził E.ON Aura i Solarwat MyReserve",
+            "uk": "енергоменеджер для kiwigrid-powered пристроїв. підтверджено для E.ON Aura та Solarwatt MyReserve",
+            "zh-cn": "基维格压发电装置的能源manager。 已确认为E.ON Aura和太阳能保护公司"
+          },
         "authors": [
             "Michael Schuster <development@unltd-networx.de>"
         ],
         "docs": {
             "en": "docs/en/admin.md",
-            "de": "docs/de/admin.md"
-        },
+            "de": "doks/de/admin.md",
+            "ru": "docs/en/admin.md",
+            "pt": "docs/en/admin.md",
+            "nl": "docs/en/admin",
+            "fr": "docs/en/admin.md",
+            "it": "docs/en/admin.md",
+            "es": "docs/en/admin.md",
+            "pl": "docs/en/admin.md",
+            "uk": "docs/en/admin.md",
+            "zh-cn": "docs/en/admin.md"
+          },
         "platform": "Javascript/Node.js",
         "mode": "daemon",
         "icon": "energymanager.png",

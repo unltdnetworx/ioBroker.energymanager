@@ -46,7 +46,6 @@
     "url": "git+https://github.com/unltdnetworx/ioBroker.energymanager.git"
   },
   "scripts": {
-    "test": "node node_modules/mocha/bin/mocha --exit",
-    "release": "release-script"
+    "test": "node node_modules/mocha/bin/mocha --exit"
   }
 }
