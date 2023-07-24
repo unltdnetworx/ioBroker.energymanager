@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "energymanager",
-        "version": "1.4.1",
+        "version": "1.4.2",
         "news": {
+            "1.4.2": {
+                "en": "security- and compatibilityupdate",
+                "de": "Sicherheits- und Kompatibilitätsupdate"
+            },
             "1.4.1": {
                 "en": "clear version number",
                 "de": "Anpassung Versionsnummer"
