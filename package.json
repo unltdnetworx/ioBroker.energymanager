@@ -1,5 +1,5 @@
 {
-  "version": "1.4.1",
+  "version": "1.4.2",
   "author": {
     "name": "Michael Schuster",
     "email": "development@unltd-networx.de"
@@ -20,11 +20,11 @@
   "deprecated": false,
   "description": "energymanager for kiwigrid powered devices",
   "devDependencies": {
-    "@alcalzone/release-script": "^3.5.2",
-    "chai": "^4.3.6",
-    "eslint": "^8.8.0",
+    "@alcalzone/release-script": "^3.6.0",
+    "chai": "^4.3.7",
+    "eslint": "^8.45.0",
     "gulp": "^4.0.2",
-    "mocha": "^9.2.0",
+    "mocha": "^10.2.0",
     "kind-of": ">=6.0.3"
   },
   "homepage": "https://github.com/unltdnetworx/ioBroker.energymanager",

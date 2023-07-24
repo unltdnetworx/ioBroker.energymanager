@@ -282,7 +282,7 @@ function main() {
             },
             native: {}
         },
-        adapter.subscribeStates('managerReboot')
+        () => adapter.subscribeStates('managerReboot')
     );
 
     getManagerValues();
