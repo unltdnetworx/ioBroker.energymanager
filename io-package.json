@@ -135,6 +135,9 @@
         "loglevel": "info",
         "type": "energy",
         "license": "MIT",
+        "dependencies": [
+            {"js-controller": ">=3.3.22"}
+        ],
         "messagebox": false,
         "compact": true,
         "connectionType": "local",
