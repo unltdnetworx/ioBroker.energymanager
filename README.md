@@ -26,6 +26,18 @@ Help or hints are welcome.
 
 ## Changelog
 
+### 1.4.2
+
+* security- and compatibilityupdate
+
+### 1.4.1
+
+* clear version number
+
+### 1.3.5
+
+* changed the year in readme and license
+
 ### 1.3.4
 
 * support for discovered but not installed devices
