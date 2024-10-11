@@ -92,6 +92,23 @@ function translateName(strName) {
 
 function updateState (strGroup,valTag,valTagLang,valType,valUnit,valRole,valValue) {
     adapter.log.debug("strGroup: "+strGroup);
+    let updatedState
+    switch (adapter.config.managerStateExpireTimeout) {
+        case "-1":
+            // states do not expire
+            updatedState = {val: valValue, ack: true};
+            break;
+        case "": 
+            // no config value provided (default)
+            // state expires if adapter can't pull it from hardware
+            updatedState = {val: valValue, ack: true, expire: adapter.config.managerIntervall * 2};
+            break;
+        default: 
+            // value was provided in the config
+            // state expires if adapter can't pull it from hardware
+            updatedState = {val: valValue, ack: true, expire: parseInt(adapter.config.managerStateExpireTimeout)};
+    }
+
     adapter.setObjectNotExists(
         strGroup + "." + valTag, {
             type: 'state',
@@ -107,7 +124,7 @@ function updateState (strGroup,valTag,valTagLang,valType,valUnit,valRole,valValu
         }, function() {
             adapter.setState(
                 strGroup + "." + valTag,
-                {val: valValue, ack: true, expire: (adapter.config.managerIntervall*2)} //value expires if adapter can't pull it from hardware
+                updatedState
             )
         }
     );
